@@ -31,6 +31,12 @@ class GameScene: SKScene {
         pring = self.childNode(withName: "pring") as! SKSpriteNode
         yring2 = self.childNode(withName: "yring2") as! SKSpriteNode
         yring3 = self.childNode(withName: "yring3") as! SKSpriteNode
+        
+        let border = SKPhysicsBody(edgeLoopFrom: self.frame)
+        border.friction = 0
+        border.restitution = 1
+        
+        self.physicsBody = border
     }
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
